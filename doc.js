@@ -998,117 +998,117 @@
 
 
 
-// Задачка Репа _________________________________додивитись 
+// Задачка Репа _________________________________додивитись
 
 
-const cart = {
-  items: [],
-  getItems() { return this.items; },
-  add(product) {
-    // перебираем масив, чтобы потом можно было увеличить количество прихода определенной фрутка в корзину (проверка на уникальность)
-    console.table(this.items)
+// const cart = {
+//   items: [],
+//   getItems() { return this.items; },
+//   add(product) {
+//     // перебираем масив, чтобы потом можно было увеличить количество прихода определенной фрутка в корзину (проверка на уникальность)
+//     console.table(this.items)
 
 
-    for (const item of this.items) {
-      // console.log(item)
+//     for (const item of this.items) {
+//       // console.log(item)
       
-      if (item.name === product.name) {
+//       if (item.name === product.name) {
 
-        item.quantity += 1;
-        return
-      //  console.log(`такой продукт уже есть в корзине ${product.name}`) 
-      }
-    }
+//         item.quantity += 1;
+//         return
+//       //  console.log(`такой продукт уже есть в корзине ${product.name}`)
+//       }
+//     }
 
 
-    const newProduct = {
-      ...product,
-      quantity: 1,
+//     const newProduct = {
+//       ...product,
+//       quantity: 1,
       
-    };
-    this.items.push(newProduct)
-    // console.table(newProduct)
-  },
-  // продакт єто ми просто так назвали параметр (из аргументов, которій пришел)
-  remove(productName) {
-    // меняем фор оф на фор потому что нам нужен индекс для слайса 
-    for (let i = 0; i < this.items.length; i++) {
+//     };
+//     this.items.push(newProduct)
+//     // console.table(newProduct)
+//   },
+//   // продакт єто ми просто так назвали параметр (из аргументов, которій пришел)
+//   remove(productName) {
+//     // меняем фор оф на фор потому что нам нужен индекс для слайса
+//     for (let i = 0; i < this.items.length; i++) {
 
-    // делаем локальную переменую для итема для обьекта, которий ми витянули с массива, потому что очень немонятно 
-      // можем деструкторизировать  const {name} = this.items[i];тогда в сравненеи будет без нейм
-      const item = this.items[i];
+//     // делаем локальную переменую для итема для обьекта, которий ми витянули с массива, потому что очень немонятно
+//       // можем деструкторизировать  const {name} = this.items[i];тогда в сравненеи будет без нейм
+//       const item = this.items[i];
 
-    // можем деструкторизировать  const {this} = items[i] више 
+//     // можем деструкторизировать  const {this} = items[i] више
       
-      console.log(item)
+//       console.log(item)
 
-      if (productName === item.name) {
-        console.log("нашли", productName)
-        console.log("индексб", i)
+//       if (productName === item.name) {
+//         console.log("нашли", productName)
+//         console.log("индексб", i)
 
-        this.items.splice(i,1)
-      }
-    }
-   },
-  clear() { this.items = [] },
+//         this.items.splice(i,1)
+//       }
+//     }
+//    },
+//   clear() { this.items = [] },
 
-  countTotalPrice() { 
-    console.log(this.items)
+//   countTotalPrice() {
+//     console.log(this.items)
 
-    let totalPrice = 0; 
+//     let totalPrice = 0;
    
 
-    for (const item of this.items) {
-      console.log(this.item) 
-      totalPrice += (this.item.price * this.item.quantity)
+//     for (const item of this.items) {
+//       console.log(this.item)
+//       totalPrice += (this.item.price * this.item.quantity)
        
-    }
-    return total
-  },
-  increaseQuntity() {},
-  decreaseQuntity() { },
-  getProductTotalPrice(product) {},
+//     }
+//     return total
+//   },
+//   increaseQuntity() {},
+//   decreaseQuntity() { },
+//   getProductTotalPrice(product) {},
 
-}
+// }
 
-console.log(cart.getItems())
-
-
-cart.add({ name: "apple", price: 50 });
-cart.add({ name: "kiwi", price: 45 });
-cart.add({ name: "kiwi", price: 45 });
-cart.add({ name: "pineapple", price: 60 });
-cart.add({ name: "pineapple", price: 60 });
-
-
-
-console.log(cart.getItems())
-
-
-console.log("total:", cart.countTotalPrice() )
-
-
-cart.remove("cherry")
-console.log(cart.getItems())
-
-
-// cart.clear();
 // console.log(cart.getItems())
 
 
+// cart.add({ name: "apple", price: 50 });
+// cart.add({ name: "kiwi", price: 45 });
+// cart.add({ name: "kiwi", price: 45 });
+// cart.add({ name: "pineapple", price: 60 });
+// cart.add({ name: "pineapple", price: 60 });
 
-const getProductTotalPrice = function ({price,quantity}) {
+
+
+// console.log(cart.getItems())
+
+
+// console.log("total:", cart.countTotalPrice() )
+
+
+// cart.remove("cherry")
+// console.log(cart.getItems())
+
+
+// // cart.clear();
+// // console.log(cart.getItems())
+
+
+
+// const getProductTotalPrice = function ({price,quantity}) {
   
-  return price * quantity
-}
-
-console.log(getProductTotalPrice(cart.items[0]))
-
-// а было
-// const getProductTotalPrice = function (product) {
-  
-//   return product.price * product.quantity
+//   return price * quantity
 // }
+
+// console.log(getProductTotalPrice(cart.items[0]))
+
+// // а было
+// // const getProductTotalPrice = function (product) {
+  
+// //   return product.price * product.quantity
+// // }
   
 
 
@@ -1117,8 +1117,24 @@ console.log(getProductTotalPrice(cart.items[0]))
 
 
 
+__________________________30 задание___________
+
+// function makeTask(data) {
+//   const completed = false;
+//   const category = "General";
+//   const priority = "Normal";
+//   // Change code below this line
 
 
+//   const obj = {
+//     category, priority, completed, ...data,
+    
+// }
+//    return obj
+//   // Change code above this line
+// }
+
+// console.log(makeTask({ category: "Finance", text: "Take interest" }) )
 
 
 
